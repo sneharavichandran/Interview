@@ -61,7 +61,7 @@ class FormChoices extends React.Component {
                                 <Col xs={0} md={3}>
                                     <div style={{ visibility: "hidden" }}></div>
                                 </Col>
-                                <Col xs={12} md={3}>
+                                <Col xs={12} md={2}>
                                     <Form.Label>
                                         Label
                                     </Form.Label>
@@ -76,21 +76,21 @@ class FormChoices extends React.Component {
                         </Form.Group>
                         <Form.Group>
                             <Row>
-                                <Col>
+                                <Col xs={0} md={3}>
                                     <div style={{ visibility: "hidden" }}></div>
                                 </Col>
-                                <Col xs={3}>
+                                <Col xs={12} md={2}>
                                     <Form.Label>
                                         Type
                                     </Form.Label>
 
                                 </Col>
-                                <Col xs={2}>
+                                <Col xs={12} md={2}>
                                     <Form.Text>
                                         Multi-select
                                     </Form.Text>
                                 </Col>
-                                <Col xs={4}>
+                                <Col xs={12} md={2}>
                                     <Form.Check
 
                                         type='checkbox'
@@ -104,19 +104,19 @@ class FormChoices extends React.Component {
                         </Form.Group>
                         <Form.Group>
                             <Row>
-                                <Col>
+                                <Col xs={0} md={3}>
                                     <div style={{ visibility: "hidden" }}></div>
                                 </Col>
-                                <Col xs={3}>
+                                <Col xs={12} md={2}>
                                     <Form.Label>
                                         Default Value
                                     </Form.Label>
                                 </Col>
-                                <Col>
+                                <Col xs={12} md={2}>
                                     <Form.Control type="text" value={this.state.default} onClick={(e) => e.target.value = ''} onChange={(e) => this.setState({ default: e.target.value })} />
 
                                 </Col>
-                                <Col>
+                                <Col xs={0} md={3}>
                                     <div style={{ visibility: "hidden" }}></div></Col>
                                 <br /><br />
                             </Row>
@@ -124,17 +124,17 @@ class FormChoices extends React.Component {
 
                         <Form.Group>
                             <Row>
-                                <Col>
+                                <Col xs={0} md={3}>
                                     <div style={{ visibility: "hidden" }}></div>
                                 </Col>
-                                <Col xs={3}>
+                                <Col xs={12} md={2}>
                                     <Form.Label>
                                         Choices
                                     </Form.Label>
 
                                 </Col>
 
-                                <Col>
+                                <Col xs={12} md={3}>
                                     <Form.Control style={{ color: this.state.textColor }} type="addchoice" placeholder="Add Choices" value={this.state.newchoice} onChange={(e) => {
                                         if (e.target.value.length > 40) {
                                             this.setState({ textColor: 'red' })
@@ -192,7 +192,7 @@ class FormChoices extends React.Component {
 
                                 </Col>
 
-                                <Col>
+                                <Col  xs={12} md={3}>
                                     <Button variant="primary" onClick={() => {
                                         console.log(this.state.newchoice)
                                         var cc = [...this.state.choices]
@@ -235,17 +235,17 @@ class FormChoices extends React.Component {
                                 <br /><br />
                             </Row>
                             <Row>
-                                <Col xs={3}>
+                                <Col xs={0} md={3}>
                                     <div style={{ visibility: "hidden" }}></div>
                                 </Col>
-                                <Col xs={3}>
+                                <Col xs={12} md={2}>
                                     <Form.Label>
                                         Order
                                     </Form.Label>
                                 </Col>
 
 
-                                <Col >
+                                <Col xs={12} md={3}>
                                     <Dropdown>
                                         <Dropdown.Toggle variant="success" id="dropdown-order">
                                             {this.state.order}
@@ -281,10 +281,10 @@ class FormChoices extends React.Component {
 
                         </Form.Group>
                         <Row>
-                            <Col>
+                            <Col xs={0} md={3}>
                                 <div style={{ visibility: "hidden" }}></div>
                             </Col>
-                            <Col className="d-flex justify-content-end">
+                            <Col xs={12} md={3} className="d-flex justify-content-center" style={{paddingTop:'10px'}}>
                                 <SubmitButton
                                     label={this.state.label}
                                     required={this.state.required}
@@ -292,10 +292,12 @@ class FormChoices extends React.Component {
                                     displayAlpha={this.state.displayAlpha}
                                     default={this.state.default}
                                 />
+                                
                             </Col>
 
-                            <Col >
+                            <Col xs={12} md={3} className="d-flex justify-content-center" style={{paddingTop:'10px'}} >
                                 <Button variant="primary"
+                                
                                     onClick={
                                         () => {
                                             this.setState({
@@ -313,6 +315,7 @@ class FormChoices extends React.Component {
                                         }
                                     }
                                 >
+                                    
                                     Cancel
                                 </Button>
 
