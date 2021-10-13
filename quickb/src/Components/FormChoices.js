@@ -22,7 +22,8 @@ class FormChoices extends React.Component {
             bgc: "white",
             originalorder: [],
             order: "Select Order",
-            textColor: 'black'
+            textColor: 'black',
+            random: ""
         }
     }
 
@@ -46,7 +47,7 @@ class FormChoices extends React.Component {
         console.log(newval)
     }
 
-
+   
 
 
     render() {
@@ -291,6 +292,7 @@ class FormChoices extends React.Component {
                                     choices={this.state.choices}
                                     displayAlpha={this.state.displayAlpha}
                                     default={this.state.default}
+                                    updatee={()=>this.setState({random:""})}
                                 />
                                 
                             </Col>

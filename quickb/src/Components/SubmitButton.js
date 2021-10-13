@@ -10,6 +10,11 @@ class SubmitButton extends Component {
             <Button onClick={() => {
                 var defaultVal = this.props.default
                 var choices = this.props.choices
+                if(this.props.label.trim()==="")
+                {
+                    alert("Label field is required")
+                    return
+                }
 
                 if (defaultVal.trim() === "") {
                     alert("default value is empty")
@@ -18,6 +23,7 @@ class SubmitButton extends Component {
                 if (!choices.includes(defaultVal)) {
                     choices.push(defaultVal)
                 }
+
                 const data = {
                     label: this.props.label,
                     required: this.props.required,
@@ -27,6 +33,7 @@ class SubmitButton extends Component {
                 }
                 console.log(data)
                 FieldService.saveField(data)
+                this.props.updatee()
             }}>
                 Submit
             </Button>
